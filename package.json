@@ -1,5 +1,5 @@
 {
-  "name": "Vocal-Call-Agent",
+  "name": "vocal-call-agent",
   "version": "1.0.0",
   "description": "A JavaScript SDK that provides a complete voice calling interface with WebSocket communication, audio recording/playback, and automatic UI management.",
   "main": "main.js",
