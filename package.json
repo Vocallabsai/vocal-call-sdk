@@ -1,7 +1,7 @@
 {
-  "name": "test-web-socket",
+  "name": "Vocal-Call-Agent",
   "version": "1.0.0",
-  "description": "",
+  "description": "A JavaScript SDK that provides a complete voice calling interface with WebSocket communication, audio recording/playback, and automatic UI management.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
