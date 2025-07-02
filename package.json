@@ -1,6 +1,6 @@
 {
   "name": "vocal-call-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript SDK that provides a complete voice calling interface with WebSocket communication, audio recording/playback, and automatic UI management.",
   "main": "dist/vocalcallsdk.js",
   "scripts": {
