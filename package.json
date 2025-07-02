@@ -1,8 +1,8 @@
 {
-  "name": "vocal-call-agent",
+  "name": "vocal-call-sdk",
   "version": "1.0.0",
   "description": "A JavaScript SDK that provides a complete voice calling interface with WebSocket communication, audio recording/playback, and automatic UI management.",
-  "main": "main.js",
+  "main": "dist/vocalcallsdk.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
@@ -10,6 +10,21 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "keywords": [
+    "sdk",
+    "voice-call",
+    "websocket",
+    "webrtc",
+    "javascript",
+    "audio",
+    "vocal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yash-not-bot22/vocal-call-sdk"
+  },
+  "author": "Yash Not Bot",
+  "license": "MIT",
   "dependencies": {
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
@@ -25,7 +40,5 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
