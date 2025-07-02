@@ -87,6 +87,18 @@ function VoiceCall({ agentId }) {
   return <div ref={containerRef} />;
 }
 ```
+## Alternatively Using CDN
+
+```jsx
+<script src="https://cdn.jsdelivr.net/npm/vocal-call-sdk@1.0.0/dist/vocalcallsdk.js"></script>
+<script>
+  VocalCallSDK.init({
+    serverUrl: 'wss://your-server.com/socket',
+    callerId: 'user123',
+    autoUI: true
+  });
+</script>
+```
 
 ## Browser Requirements
 
