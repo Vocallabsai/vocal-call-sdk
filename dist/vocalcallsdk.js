@@ -4,8 +4,7 @@
 
 export class VocalCallSDK {
   constructor({
-    agentId,
-    callId,
+    websocketUrl, // New: complete WebSocket URL
     inactiveText = 'Talk to Assistant',
     activeText = 'Listening...',
     size = 'medium',
@@ -13,20 +12,21 @@ export class VocalCallSDK {
     container = null, // DOM element or selector where to render button
     config = {}
   }) {
+    // Validate required WebSocket URL
+    if (!websocketUrl) {
+      throw new Error('websocketUrl is required');
+    }
+    
     // Core configuration
-    this.agentId = agentId;
-    this.callId = callId;
+    this.websocketUrl = websocketUrl;
     this.inactiveText = inactiveText;
     this.activeText = activeText;
     this.size = size;
     this.className = className;
     this.container = container;
     
-    // Default endpoints and settings
+    // Default settings (removed websocket endpoint since it's now provided)
     this.config = {
-      endpoints: {
-        websocket: 'wss://call-dev.vocallabs.ai/ws/'
-      },
       audio: {
         sampleRate: 48000,
         echoCancellation: true,
@@ -175,8 +175,8 @@ export class VocalCallSDK {
           try { this.wsClient.socket.close(); } catch {}
         }
         
-        const url = `${this.config.endpoints.websocket}?agent=${this.agentId.trim()}_${this.callId.trim()}_web_48000`;
-        this.wsClient.socket = new WebSocket(url);
+        // Use the provided WebSocket URL directly
+        this.wsClient.socket = new WebSocket(this.websocketUrl);
 
         this.wsClient.socket.onopen = (e) => this._handleWSOpen(e);
         this.wsClient.socket.onmessage = (e) => this._handleWSMessage(e);
@@ -594,7 +594,7 @@ export class VocalCallSDK {
   }
 
   async _handleButtonClick() {
-    if (!this.agentId || !this.callId) { 
+    if (!this.websocketUrl) { 
       this._setStatus('error'); 
       return; 
     }
@@ -747,3 +747,4 @@ export class VocalCallSDK {
     }
   }
 }
+
