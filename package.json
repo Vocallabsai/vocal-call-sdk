@@ -1,44 +1,45 @@
 {
-  "name": "vocal-call-sdk",
-  "version": "1.0.2",
-  "description": "A JavaScript SDK that provides a complete voice calling interface with WebSocket communication, audio recording/playback, and automatic UI management.",
-  "main": "dist/vocalcallsdk.js",
+  "name": "@vocallabs/call-sdk",
+  "version": "1.0.3",
+  "description": "Complete audio call management SDK with recording upload capabilities",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "sdk",
-    "voice-call",
-    "websocket",
-    "webrtc",
-    "javascript",
     "audio",
-    "vocal"
+    "call",
+    "recording",
+    "webrtc",
+    "websocket",
+    "voice",
+    "sdk"
   ],
+  "author": "VocalLabs",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^3.0.0"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yash-not-bot22/vocal-call-sdk"
+    "url": "https://github.com/vocallabs/call-sdk.git"
   },
-  "author": "Yash Not Bot",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vocallabs/call-sdk/issues"
+  },
+  "homepage": "https://github.com/vocallabs/call-sdk#readme",
   "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.3.5"
+    "uuid": "^11.1.0"
   }
 }
